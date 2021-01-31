@@ -9,7 +9,7 @@ class Drink
           "name" => result["name"],
           "ingredients" => result["ingredients"],
           "instructions" => result["instructions"],
-          "img_url" => result["img_url"]
+          "image" => result["image"]
         }
       end
     end
@@ -21,16 +21,16 @@ class Drink
       "name" => results.first["name"],
       "ingredients" => results.first["ingredients"],
       "instructions" => results.first["instructions"],
-      "img_url" => results.first["img_url"]
+      "image" => results.first["image"]
     }
   end
 
   def self.create(opts)
     results = DB.exec(
         <<-SQL
-            INSERT INTO drinks (name, ingredients, instructions, img_url)
-            VALUES ( '#{opts["name"]}', '#{opts["ingredients"]}', '#{opts["instructions"]}', '#{opts["img_url"]}' )
-            RETURNING id, name, ingredients, instructions, img_url;
+            INSERT INTO drinks (name, ingredients, instructions, image)
+            VALUES ( '#{opts["name"]}', '#{opts["ingredients"]}', '#{opts["instructions"]}', '#{opts["image"]}' )
+            RETURNING id, name, ingredients, instructions, image;
         SQL
     )
     return {
@@ -38,7 +38,7 @@ class Drink
         "name" => results.first["name"],
         "ingredients" => results.first["ingredients"],
         "instructions" => results.first["instructions"],
-        "img_url" => results.first["img_url"]
+        "image" => results.first["image"]
     }
   end
 
@@ -51,9 +51,9 @@ class Drink
     results = DB.exec(
         <<-SQL
             UPDATE drinks
-            SET name='#{opts["name"]}', ingredients='#{opts["ingredients"]}', instructions='#{opts["instructions"]}', img_url='#{opts["img_url"]}'
+            SET name='#{opts["name"]}', ingredients='#{opts["ingredients"]}', instructions='#{opts["instructions"]}', image='#{opts["image"]}'
             WHERE id=#{id}
-            RETURNING id, name,ingredients, instructions, img_url;
+            RETURNING id, name,ingredients, instructions, image;
         SQL
     )
     return {
@@ -61,7 +61,7 @@ class Drink
         "name" => results.first["name"],
         "ingredients" => results.first["ingredients"],
         "instructions" => results.first["instructions"],
-        "img_url" => results.first["img_url"]
+        "image" => results.first["image"]
     }
   end
 end
