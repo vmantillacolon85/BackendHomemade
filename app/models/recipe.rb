@@ -1,6 +1,9 @@
 class Recipe
-  DB = PG.connect({:host=>"localhost", :port => 5432, :dbname => 'rails_react_recipe_development'})
-
+    if ENV["DATABASE_URL"]
+        PG.connect(ENV['DATABASE_URL'])
+    elsif
+        DB = PG.connect({:host => "localhost", :port => 5432, :dbname => 'contacts_development'})
+    end
 
     def self.all
         results = DB.exec("SELECT * FROM recipes;")
