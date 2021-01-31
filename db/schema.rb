@@ -16,10 +16,17 @@ ActiveRecord::Schema.define(version: 2021_01_29_182551) do
   enable_extension "plpgsql"
 
   create_table "recipes", force: :cascade do |t|
-    t.string "name"
-    t.string "ingredients"
-    t.string "instructions"
-    t.string "img_url"
+      t.string "name"
+      t.string "ingredients"
+      t.string "instructions"
+      t.string "img_url"
+      
+
+  create_table "recipes", force: :cascade do |t|
+      t.string "name"
+      t.string "ingredients"
+      t.string "instructions"
+      t.string "img_url"
   end
 
 end
