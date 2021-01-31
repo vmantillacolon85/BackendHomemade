@@ -105,7 +105,7 @@ end
             name='#{opts["name"]}',
             ingredients='#{opts["ingredients"]}',
             instructions='#{opts["instructions"]}',
-            img_url='#{opts["img_url"],}',
+            img_url='#{opts["img_url"]}',
             recipe_id=#{opts["recipe_id"] ? opts["recipe_id"] : NULL }
             WHERE id=#{id}
             RETURNING id, name,ingredients, instructions, img_url, recipe_id ;
