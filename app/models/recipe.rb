@@ -1,8 +1,7 @@
 class Recipe
-  DB = PG.connect({:host=>"", :port => 5432, :dbname => 'rails_react_recipe_development', :password => 'dbn3rd'})
+  DB = PG.connect({:host=>"", :port => 5432, :dbname => 'rails_react_recipe_development'})
 
     def self.all
-        # results = DB.exec("SELECT * FROM recipes;")
         results = DB.exec("SELECT * FROM recipes;")
         return results.each do |result|
             {
