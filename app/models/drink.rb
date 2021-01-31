@@ -53,7 +53,7 @@ class Drink
             UPDATE drinks
             SET name='#{opts["name"]}', ingredients='#{opts["ingredients"]}', instructions='#{opts["instructions"]}', img_url='#{opts["img_url"]}'
             WHERE id=#{id}
-            RETURNING id, name,ingredients, instructions, img_url ;
+            RETURNING id, name,ingredients, instructions, img_url;
         SQL
     )
     return {
