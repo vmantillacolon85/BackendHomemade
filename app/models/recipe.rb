@@ -2,7 +2,6 @@ class Recipe
   DB = PG.connect({:host=>"localhost", :port => 5432, :dbname => 'rails_react_recipe_development'})
 
   def self.all
-      # results = DB.exec("SELECT * FROM recipes;")
       results = DB.exec(<<-SQL
         SELECT
             recipes.*,
@@ -46,7 +45,7 @@ end
             drinks.ingredients,
             drinks.instructions,
             drinks.img_url
-            FROM recipes
+        FROM recipes
         LEFT JOIN drinks
             ON recipes.recipe_id = drinks.id
         WHERE recipes.id = #{id};
@@ -70,7 +69,7 @@ end
         "ingredients" => result["ingredients"],
         "instructions" => result["instructions"],
         "img_url" => result["img_url"],
-        "recipe" => recipe
+        "recipe" => recipe,
     }
 end
 
