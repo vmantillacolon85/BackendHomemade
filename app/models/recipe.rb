@@ -9,7 +9,7 @@ class Recipe
         results = DB.exec("SELECT * FROM recipes;")
         return results.each do |result|
             {
-                "id" => result["recipe_id"].to_i,
+                "id" => result["id"].to_i,
                 "name" => result["name"],
                 "ingredients" => result["ingredients"],
                 "instructions" => result["instructions"],
