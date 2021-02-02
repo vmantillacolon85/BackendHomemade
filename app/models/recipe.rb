@@ -2,7 +2,7 @@ class Recipe
     if ENV["DATABASE_URL"]
         PG.connect(ENV['DATABASE_URL'])
     elsif
-        DB = PG.connect({:host => "localhost", :port => 5432, :dbname => 'contacts_development'})
+        DB = PG.connect({:host => "localhost", :port => 5432, :dbname => 'rails_react_recipe_development'})
     end
 
     def self.all
@@ -35,7 +35,7 @@ class Recipe
     results = DB.exec(
         <<-SQL
             INSERT INTO recipes (name, ingredients, instructions, image)
-            VALUES ( '#{opts["name"]}', '#{opts["ingredients"]}', '#{opts["instructions"]}', '#{opts["image"]}')
+            VALUES ('#{opts["name"]}', '#{opts["ingredients"]}', '#{opts["instructions"]}', '#{opts["image"]}')
             RETURNING id, name, ingredients, instructions, image;
         SQL
     )

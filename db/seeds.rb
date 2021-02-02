@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-=======
 Recipe.create([
 
     { name: 'Cornbread', ingredients: 'cornmeal, flour, sugar, salt, baking powder, melted butter, egg, milk', instructions: 'Grease a 9-inch round cake pan or cast iron skillet well and set aside. Preheat the oven to 400 degrees. In a medium mixing bowl, add the flour, cornmeal, sugar, salt, and baking powder. Whisk to combine well. Make a well in the center of your dry ingredients and add your oil or butter, milk, and egg. Stir just until the mixture comes together and there are only a few lumps remaining. Pour the batter into the prepared pan and bake for 20-25 minutes until the top is a deep golden brown and a toothpick inserted into the center comes out clean. Serve hot.', image: 'https://res.cloudinary.com/vmcolon85/image/upload/v1612131239/cornbread_spd8az.jpg' },

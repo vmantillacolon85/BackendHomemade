@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(version: 2021_01_29_182551) do
       t.string "ingredients"
       t.string "instructions"
       t.string "image"
+end
 
-
-  create_table "recipes", force: :cascade do |t|
+  create_table "drinks", force: :cascade do |t|
       t.string "name"
       t.string "ingredients"
       t.string "instructions"
